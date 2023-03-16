@@ -1,0 +1,41 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <script type="text/javascript">
+        function Enviar () {
+            var nome = document.getElementById("FormNome");
+            if (nome.value !=""){
+                alert('Agradecemos o contato ' + nome.value + ' volte sempre')
+            }
+        }
+
+    </script>
+</head>
+<body>      
+
+        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"> Exemplo de elemento de um formulário </h1></p>
+
+        <form>
+            <label for="formNome">Nome</label><br>
+            <input type="text" id="FormNome" nome= "FormNome"><br><br>
+            <label for="formEmail">Email</label><br>
+            <input type="email" id="FormEmail" nome= "FormEmail"><br>
+            <br>
+            <input type="submit" id="btnSalvar" onclick= "Enviar()"  value="Salvar"   placeholder="email@gmail.com" required>
+            <br><br>
+            <input type="checkbox" name="rTransporte" id="rtransporte" value="Trem">
+            <label for="rtransporte"> Trem </label><br>
+
+            <input type="checkbox" name="rTransporte" id="rtransporte2" value="Metro">
+            <label for="rtransporte"> Metro </label> <br>
+
+            <input type="checkbox" name="rTransporte" id="rtransporte3" value="Onibus">
+            <label for="rtransporte"> Onibus </label><br>
+
+        </form>
+    
+</body>
+</html>
