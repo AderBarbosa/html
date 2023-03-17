@@ -6,10 +6,41 @@
 
     <script type="text/javascript">
         function Enviar () {
+            var par = document.createElement('p');
             var nome = document.getElementById("FormNome");
+            var mensagem = '';
             if (nome.value !=""){
-                alert('Agradecemos o contato ' + nome.value + ' volte sempre')
+                var txt = 'Agradecemos o contato \n ' + nome.value + ' volte sempre \n';
+                    var p2 = document.createElement('p');
+                    p2.textContent = txt
+                    p2.style.backgroundColor = " lightblue";
+                    document.body.appendChild(p2);
             }
+            var mail = document.getElementById("FormEmail");
+            if(mail.value!=' ')
+            {
+
+                var txt2 = 'O email informado é: ' + mail.value;
+                var p3 = document.createElement ('p');
+                p3.textContent = txt2;
+                document.body.appendChild(p3);
+                p3.style.color = "red";
+            
+            }
+
+            var valores =document.getElementsByName("rTransporte");
+            for (var i=0;i<valores.length;i++)
+            {
+                if(valores[i].checked)
+            {
+            mensagem = mensagem + ' ' + valores[i].value + ' está selecionado \n';
+            }
+                else
+            {
+            mensagem = mensagem + ' ' + valores [i].value + ' não está selecionado \n';
+            }
+            alert (mensagem);
+        }
         }
 
     </script>
@@ -22,10 +53,8 @@
             <label for="formNome">Nome</label><br>
             <input type="text" id="FormNome" nome= "FormNome"><br><br>
             <label for="formEmail">Email</label><br>
-            <input type="email" id="FormEmail" nome= "FormEmail"><br>
+            <input type="email" id="FormEmail" nome= "FormEmail" placeholder="email@gmail.com" required> <br>
             <br>
-            <input type="submit" id="btnSalvar" onclick= "Enviar()"  value="Salvar"   placeholder="email@gmail.com" required>
-            <br><br>
             <input type="checkbox" name="rTransporte" id="rtransporte" value="Trem">
             <label for="rtransporte"> Trem </label><br>
 
@@ -33,7 +62,9 @@
             <label for="rtransporte"> Metro </label> <br>
 
             <input type="checkbox" name="rTransporte" id="rtransporte3" value="Onibus">
-            <label for="rtransporte"> Onibus </label><br>
+            <label for="rtransporte"> Onibus </label><br><br>
+
+            <input type="button" id="btnSalvar" onclick= "Enviar()"  value="Salvar"> <br>
 
         </form>
     
