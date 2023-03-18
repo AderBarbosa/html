@@ -1,0 +1,89 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <script type="text/javascript">
+        function Enviar () {
+            let f = document.getElementById("FormFaren").value;
+            let c = document.getElementById("FormCelsi").value;
+            let k = document.getElementById("FormKelv").value;
+            if (nome.value !=""){
+                var txt = 'Agradecemos o contato \n ' + nome.value + ' volte sempre \n';
+                    var p2 = document.createElement('p');
+                    p2.textContent = txt
+                    p2.style.backgroundColor = " lightblue";
+                    document.body.appendChild(p2);
+            }
+            var mail = document.getElementById("FormEmail");
+            if(mail.value!=' ')
+
+            {
+
+                var txt2 = 'O email informado é: ' + mail.value;
+                var p3 = document.createElement ('p');
+                p3.textContent = txt2;
+                document.body.appendChild(p3);
+                p3.style.color = "red";
+            
+            }
+
+            var valores =document.getElementsByName("rTransporte");
+            for (var i=0;i<valores.length;i++)
+            {
+                if(valores[i].checked)
+            {
+            mensagem = mensagem + ' ' + valores[i].value + ' está selecionado \n';
+            }
+                else
+            {
+            mensagem = mensagem + ' ' + valores [i].value + ' não está selecionado \n';
+            }
+            alert (mensagem);
+        }
+
+
+        
+
+
+        {
+                if (c.value !=""){
+            
+            f = (C * 1,8) + 32;
+            document.getElementById("FormFaren").value = f;
+
+                }
+                else
+            {
+                if (k.value !=""){
+
+            c = (k - 273,15);
+            document.getElementById("FormCelsi").value = c;
+            
+            }   
+            }
+            }
+        }
+
+    }
+
+</script>
+
+</head>
+
+<body style="background-color: rgb(253, 253, 253);">    
+        <p><h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 50px;"> Exemplo página com entrada de dados e operações matemáticas </h1> </h1></p>
+
+        <form>
+            <label for="formFaren"></label><br>
+            <input type="text" id="FormFaren" nome= "FormFaren" placeholder="Farenheit"><br>
+            <label for="formCelsi"></label><br>
+            <input type="text" id="FormCelsi" nome= "FormCelsi" placeholder="Celsius"><br>
+            <label for="formKelv"></label><br>
+            <input type="text" id="formKelv" nome= "FormKelv" placeholder="Kelvin"><br><br>
+            <input type="button" id="btnConverter" onclick="Converter()"  value="Converter">
+        </form>
+    
+</body>
+</html>
