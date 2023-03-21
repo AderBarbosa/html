@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular temperatura</title>
+    <script type="text/javascript">
+        function Converter(){
+            let f = document.getElementById("FormFaren").value;
+            let c = document.getElementById("FormCelsi").value;
+            let k = document.getElementById("FormKelv").value;
+            //let valores =document.getElementsByName("FormFaren");
+
+            if (f == ""){
+            document.getElementById ("FormFaren").focus;
+            document.getElementById ("FormFaren").style.borderColor = 'red';
+            
+            document.getElementById ("FormKelv").focus;
+            document.getElementById ("FormKelv").style.borderColor = 'red';
+            }
+                else {
+                document.getElementById("FormFaren").style.borderColor = 'grey';
+                document.getElementById("FormCelsi").style.borderColor = 'grey';
+                document.getElementById("FormKelv").style.borderColor = 'grey';
+                c = (f-32) /1.8;
+                document.getElementById("FormCelsi").value = c;
+                k = (f + 459,67) * 5/9;
+                document.getElementById("FormKelv").value = k;
+                document.getElementById("FormFaren").style.borderColor = 'grey'
+                }
+                    if (c == ""){
+                document.getElementById ("FormCelsi").focus;
+                document.getElementById ("FormCelsi").style.borderColor = 'red';
+                    }
+                    else {
+                    document.getElementById("FormCelsi").style.borderColor = 'grey';
+                    
+
+
+                    k = (c + 273);
+                    document.getElementById("FormKelv").value = k;    
+                    }
+            }
+            
+    </script>
+
+    <style>
+        input {border-color: grey;
+        }
+
+    </style>
+
+</head>
+
+<body style="background-color: rgb(253, 253, 253);">    
+        <p><h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 50px;"> Exemplo página com entrada de dados e operações matemáticas </h1> </h1></p>
+
+        <form>
+            <label for="formFaren"></label><br>
+            <input type="text" id="FormFaren" nome= "FormFaren" placeholder="Farenheit"><br>
+            <label for="formCelsi"></label><br>
+            <input type="text" id="FormCelsi" nome= "FormCelsi" placeholder="Celsius"><br>
+            <label for="formKelv"></label><br>
+            <input type="text" id="FormKelv" nome= "FormKelv" placeholder="Kelvin"><br><br>
+            <input type="button" id="btnConverter" onclick="Converter()"  value="Converter">
+        </form>
+    
+</body>
+</html>
