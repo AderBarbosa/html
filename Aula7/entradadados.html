@@ -10,14 +10,18 @@
             let f = document.getElementById("FormFaren").value;
             let c = document.getElementById("FormCelsi").value;
             let k = document.getElementById("FormKelv").value;
-            //let valores =document.getElementsByName("FormFaren");
 
-            if (f == ""){
+            if (f == "" && c =="" && k ==""){
             document.getElementById ("FormFaren").focus;
             document.getElementById ("FormFaren").style.borderColor = 'red';
             
             document.getElementById ("FormKelv").focus;
             document.getElementById ("FormKelv").style.borderColor = 'red';
+
+            document.getElementById ("FormCelsi").focus;
+            document.getElementById ("FormCelsi").style.borderColor = 'red'
+
+            alert (' Nenhum campo foi prenchido');
             }
                 else {
                 document.getElementById("FormFaren").style.borderColor = 'grey';
@@ -27,44 +31,76 @@
                 document.getElementById("FormCelsi").value = c;
                 k = (f + 459,67) * 5/9;
                 document.getElementById("FormKelv").value = k;
-                document.getElementById("FormFaren").style.borderColor = 'grey'
                 }
-                    if (c == ""){
-                document.getElementById ("FormCelsi").focus;
-                document.getElementById ("FormCelsi").style.borderColor = 'red';
-                    }
-                    else {
+                    if (c != ""){
                     document.getElementById("FormCelsi").style.borderColor = 'grey';
+                    document.getElementById("FormFaren").style.borderColor = 'grey';
+                    document.getElementById("FormKelv").style.borderColor = 'grey';
+                    k = (c * 1) + 273;
+                    document.getElementById("FormKelv").value = k; 
+                    f = (c * 1.8 + 32);   
+                    document.getElementById("FormFaren").value = f; 
                     
-
-
-                    k = (c + 273);
-                    document.getElementById("FormKelv").value = k;    
                     }
-            }
-            
+                    if(k !=""){
+                    document.getElementById("FormCelsi").style.borderColor = 'grey';
+                    document.getElementById("FormFaren").style.borderColor = 'grey';
+                    document.getElementById("FormKelv").style.borderColor = 'grey';
+                    c = (k - 273.15);
+                    document.getElementById("FormCelsi").value = c
+                    f = (k - 273.15) * (9/5) + 32;
+                    document.getElementById("FormFaren").value = f;
+                    }
+                }
+                    function Limpar(){
+                    let f = document.getElementById("FormFaren").value;
+                    let c = document.getElementById("FormCelsi").value;
+                    let k = document.getElementById("FormKelv").value;
+                    f = "";
+                    document.getElementById("FormFaren").value = f; 
+                    c = "";
+                    document.getElementById("FormCelsi").value = c;
+                    k = "";
+                    document.getElementById("FormKelv").value = k;
+                    }
+                
     </script>
 
     <style>
         input {border-color: grey;
         }
+        fieldset {border-color: darkcyan;
+        }
+        body {     
+        background-color: rgb(207, 231, 245, 0.808);
+        }
+        #Resultado { border-color: brown;
+        }
+        #btnConverter{ background-color: blue; color: azure; border-color: black;
+        }
+        #btnLimpar { background-color: blue; color: azure; border-color: black;
+        }
 
     </style>
-
 </head>
 
-<body style="background-color: rgb(253, 253, 253);">    
-        <p><h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 50px;"> Exemplo página com entrada de dados e operações matemáticas </h1> </h1></p>
-
-        <form>
-            <label for="formFaren"></label><br>
-            <input type="text" id="FormFaren" nome= "FormFaren" placeholder="Farenheit"><br>
-            <label for="formCelsi"></label><br>
-            <input type="text" id="FormCelsi" nome= "FormCelsi" placeholder="Celsius"><br>
-            <label for="formKelv"></label><br>
-            <input type="text" id="FormKelv" nome= "FormKelv" placeholder="Kelvin"><br><br>
-            <input type="button" id="btnConverter" onclick="Converter()"  value="Converter">
-        </form>
+<body>    
+        <p><h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 30px; color: rgb(236, 155, 155);"> Exemplo página com entrada de dados e operações matemáticas </h1></p>
+        <p><h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-style: italic; font-size: 50px; color: brown;"> Convertendo temperaturas </h2></p>
     
+    
+    </fieldset>
+        <form>
+            <br><br><fieldset id= "Resultado">
+            <label for= "formFaren">Farenheit F°</label><br>
+            <input type= "number" id="FormFaren" nome= "FormFaren" placeholder="Farenheit"><br><br>
+            <label for= "formCelsi">Celsius C°</label><br>
+            <input type= "number" id="FormCelsi" nome= "FormCelsi" placeholder="Celsius"><br><br>
+            <label for= "formKelv">Kelvin K°</label><br>
+            <input type= "number" id="FormKelv" nome= "FormKelv" placeholder="Kelvin"><br><br>
+            <input type= "button" id="btnConverter" onclick= "Converter()"  value="Converter">
+            <input type= "button" id="btnLimpar" onclick = "Limpar()" value="Limpar">
+        </fieldset>
+        </form>
 </body>
 </html>
