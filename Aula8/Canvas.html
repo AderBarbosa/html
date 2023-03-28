@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Canvas 20
+    </title>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Exemplo de um canvas20</h1>
+    <canvas id="canvas" width="750px"></canvas>
+    
+</body>
+    <script type="text/javascript">
+    
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = rgba_aleatorio();
+    ctx.fillRect(10,10,200,100);
+    ctx.clearRect(35,35,150,50);
+    ctx.strokeRect(10,10,200,100);
+    ctx.strokeRect(35,35,150,50);
+
+    ctx.moveTo(35,35);
+    ctx.lineTo(185,85);
+    ctx.strokeStyle = rgba_aleatorio();
+    ctx.stroke();
+
+    ctx.moveTo(185,35);
+    ctx.lineTo(35,85);
+    ctx.strokeStyle = rgba_aleatorio();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(300,100,25,0,2*Math.PI);
+    ctx.strokeStyle = rgba_aleatorio();
+    ctx.stroke();
+    ctx.fillStyle = rgba_aleatorio();
+    ctx.fill();
+
+    ctx.font='54px serif';
+    ctx.fillStyle=rgba_aleatorio();
+    ctx. fillText('HELLO WORLD',230,40);
+    ctx.strokeStyle = rgba_aleatorio();
+    ctx.strokeText('HELLO WORLD',230,40);
+
+    ctx.beginPath();
+    ctx.moveTo(35,150);
+    ctx.lineTo(70,185);
+    ctx.lineTo(70,115);
+    ctx.lineTo(35,150);
+    ctx.fillStyle = rgba_aleatorio();
+    ctx.fill();
+    ctx.strokeStyle = rgba_aleatorio();
+    ctx.stroke();
+
+    function rgba_aleatorio() {
+    var r = Math.round(Math.random()*255);
+    var g = Math.round(Math.random()*255);
+    var b = Math.round(Math.random()*255);
+    var a = Math.random().toFixed(1);
+
+        return 'rgba('+ r +','+ g +','+ b +','+ a +')';
+    }
+
+</script>
+
+</html>
