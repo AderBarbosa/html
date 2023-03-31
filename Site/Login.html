@@ -20,7 +20,7 @@
             p{
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 font-size: xx-large;
-                color: rgb(5, 5, 156);
+                color: rgb(0, 0, 0);
             }
             .btnCadastrar{
                 text-decoration-color: rgb(0, 0, 0);
@@ -36,6 +36,11 @@
                 color: black;
                 text-decoration-color: rgb(0, 0, 0);
             }
+            b{
+                color: blueviolet;
+                font-size: large;
+                text-decoration-color: blueviolet;
+            }
 
 
 
@@ -44,16 +49,21 @@
 <body>
     <br> <h1> Mercado do TênNis </h1><br>
     
-    <h2>Login</h2>
+    <h2>Realize seu Login</h2>
     <form>
         <fieldset>
         <label for= "formEmail">E-mail</label><br>
         <input type= "email" id="FormEmail" nome= "FormEmail" placeholder="@email.com"><br><br>
         <label for= "formSenh">Senha</label><br>
-        <input type= "password" id="formSenh" nome= "formSenh" placeholder="******"><br>
-    <Form>
-    <a class="btnSenh2" href="Teste3.html">Esqueceu sua senha?</a>
-</fieldset>
+        <input type= "password" id="formSenh" nome= "formSenh" placeholder="******"><br><br>
+        <a class="btnSenh2" href="Teste3.html">Esqueceu sua senha?</a><br>
+
+    </fieldset>
+
+    <input type= "button" id="btnLogin" onclick = "Login()" value="Login">
+    </form>
+    
+    <b class="btnLogin" href="Teste6.html">Login</a>
 
     <br><p style="font-family: Arial, Helvetica, sans-serif;"> Não possui cadastro?</p>
 
